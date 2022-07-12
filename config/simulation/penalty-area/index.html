@@ -133,11 +133,12 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="penaltyarea">PenaltyArea</h1>
-<p><code>PenaltyArea</code>s are areas that can be used to discourage queue formation and agent pathfinding within a specific area.  Any pathfinding nodes that are contained with the bounds of a <code>PenaltyArea</code> are given a penalty upon first starting the simulation.</p>
+<p><code>PenaltyArea</code>s are objects that can be used to discourage queue formation and agent pathfinding within a specific area.  Any pathfinding nodes that are contained with the bounds of a <code>PenaltyArea</code> are given a penalty upon first starting the simulation.  As the simulation runs, the nodes in the affected area will never have a penalty lower than the penalty added by the <code>PenaltyArea</code>.</p>
 <p>When agents attempt to pathfind from one point to another, they will always choose the cheapest path possible.  By adding penalties to certain nodes, we can discourage agents from moving across these nodes, as they are considered more expensive to them.</p>
 <h2 id="how-to-create">How to Create</h2>
 <p>To create a <code>PenaltyArea</code>, simply create a new GameObject with a <code>BoxCollider</code> on it, and add the <code>PenaltyArea</code> component to it.</p>
-<p>For an even easier way, simply duplicate an existing <code>PenaltyArea</code> (which can be found in the hierarchy as GameObjects containing the name "PenaltyArea") and move it to your desired location.  <code>PenaltyArea</code>s can also be scaled via the scale vector of their <code>Transform</code> component.</p>
+<p>For an even easier way, simply duplicate an existing <code>PenaltyArea</code> (which can be found in the hierarchy as GameObjects containing the name "PenaltyArea") and move it to your desired location.  </p>
+<p><code>PenaltyArea</code>s can also be scaled via the scale vector of their <code>Transform</code> component.</p>
 <h2 id="tips">Tips</h2>
 <ul>
 <li>Always ensure the bounds of the <code>PenaltyArea</code>'s collider is hitting the ground, so the penalties can correctly be added to the pathfinding nodes</li>
