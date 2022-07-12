@@ -1,7 +1,7 @@
 site_name: Public Space Congestion Analyzer Docs
 nav:
     - General:
-        - About: about.md
+        - About: index.md
         - Quick Start: quick-start.md
     - Configuration:
         - Simulation: 

@@ -28,7 +28,7 @@ The VisualizationManager component is located on the GameObject with the name "V
 
 Setting | Description
 :-------- | :------------------------------------------------------------------------------------------------------------------------------------
-Visualization <br />Line | [**ADVANCED USER SETTING**](../about.md#advanced-user-settings). Reference to `LineRenderer` to use for visualizations.
+Visualization <br />Line | [**ADVANCED USER SETTING**](../index.md#advanced-user-settings). Reference to `LineRenderer` to use for visualizations.
 Waypoint Connection <br /> Gradient | Gradient of visualization colors defined by the weight of connections <br />between waypoints.<br /> From left to right, colors represent smaller to larger weights.
 Sublocation <br />Connection Gradient | Gradient of visualization colors defined by the weight of sublocations <br /> for a single waypoint.<br />From left to right, colors represent smaller to larger weights.
 Max Line Width | Max width the line visualization for connections can be.

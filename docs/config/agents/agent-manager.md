@@ -11,11 +11,11 @@ The `AgentManager` component is located on the GameObject with the name "AgentMa
 Setting | Description
 :-------- | :------------------------------------------------------------------------------------------------------------------------------------
 Auto Simulate | Toggles whether or not agents should automatically simulate.<br />If true, agents will simulate according to their configured time blocks as soon as the <br />simulation is started.
-Agent | [**ADVANCED USER SETTING**](../../about.md#advanced-user-settings). Reference to agent to use in simulation.
+Agent | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to agent to use in simulation.
 Spawn Pos | Reference to the position where agents will spawn when they first enter the <br />simulation.
-Planner | [**ADVANCED USER SETTING**](../../about.md#advanced-user-settings). Reference to the WaypointPlanner agents use to <br />create their Plan
-Progress Display | [**ADVANCED USER SETTING**](../../about.md#advanced-user-settings). Reference to the simulation progress display
-Agent Settings | [**ADVANCED USER SETTING**](../../about.md#advanced-user-settings). Reference to the AgentSettings <br />ScriptableObject.
+Planner | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to the WaypointPlanner agents use to <br />create their Plan
+Progress Display | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to the simulation progress display
+Agent Settings | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to the AgentSettings <br />ScriptableObject.
 Path Update <br />Rate | Number of times per second that each agent will recalculate its path.<br />Higher values result in more accurate paths, but are more expensive to simulate.
 Min Max Speed | Min and max movement speed of an agent.  Whenever a new agent is added to the <br />simulation, it will have a speed between these two values.
 Waypoint Dist <br />Threshold | Min distance away from a target an agent must be to consider having "reached" <br />their target.

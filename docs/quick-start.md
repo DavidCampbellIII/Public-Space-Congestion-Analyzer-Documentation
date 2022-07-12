@@ -57,7 +57,7 @@ After it is positioned, increase or decrease the grid size so that the entire si
 
 The grid should encompass the entire simulation environment, but it should not be any larger than necessary.  Massively large grids are slower and less accurate than smaller ones.
 
-There are other settings on the `Pathfinder` that affect how the agents' pathfinding works, but these are all considered [**ADVANCED USER SETTINGS**](about.md#advanced-user-settings) and should only be changed if the user is absolutely certain of what they are doing.
+There are other settings on the `Pathfinder` that affect how the agents' pathfinding works, but these are all considered [**ADVANCED USER SETTINGS**](index.md#advanced-user-settings) and should only be changed if the user is absolutely certain of what they are doing.
 
 ### Setting up the Simulation Camera
 
