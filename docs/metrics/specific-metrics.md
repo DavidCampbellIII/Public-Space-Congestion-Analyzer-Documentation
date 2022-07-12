@@ -2,6 +2,8 @@
 
 Metrics of specific elements of the simulation, such as agents and [`Waypoint`s](../config/waypoints/waypoints.md) can be viewed.
 
+Metrics for specific agents or [`Waypoint`s](../config/waypoints/waypoints.md) can only be viewed when the simulation is running.
+
 ## Agent Metrics
 
 To see a specific agent's metrics, simply click on the agent in the simulation.  An `AgentMetricsDisplay` will appear, and show information about the agent.

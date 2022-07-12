@@ -1,6 +1,6 @@
 # PenaltyArea
 
-`PenaltyArea`s are areas that can be used to discourage queue formation and agent pathfinding within a specific area.  Any pathfinding nodes that are contained with the bounds of a `PenaltyArea` are given a penalty upon first starting the simulation.
+`PenaltyArea`s are objects that can be used to discourage queue formation and agent pathfinding within a specific area.  Any pathfinding nodes that are contained with the bounds of a `PenaltyArea` are given a penalty upon first starting the simulation.  As the simulation runs, the nodes in the affected area will never have a penalty lower than the penalty added by the `PenaltyArea`.
 
 When agents attempt to pathfind from one point to another, they will always choose the cheapest path possible.  By adding penalties to certain nodes, we can discourage agents from moving across these nodes, as they are considered more expensive to them.
 
@@ -8,7 +8,9 @@ When agents attempt to pathfind from one point to another, they will always choo
 
 To create a `PenaltyArea`, simply create a new GameObject with a `BoxCollider` on it, and add the `PenaltyArea` component to it.
 
-For an even easier way, simply duplicate an existing `PenaltyArea` (which can be found in the hierarchy as GameObjects containing the name "PenaltyArea") and move it to your desired location.  `PenaltyArea`s can also be scaled via the scale vector of their `Transform` component.
+For an even easier way, simply duplicate an existing `PenaltyArea` (which can be found in the hierarchy as GameObjects containing the name "PenaltyArea") and move it to your desired location.  
+
+`PenaltyArea`s can also be scaled via the scale vector of their `Transform` component.
 
 ## Tips
 

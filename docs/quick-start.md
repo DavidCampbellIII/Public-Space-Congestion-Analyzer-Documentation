@@ -2,7 +2,7 @@
 
 ## Setting up the Environment
 
-To correctly set up the simulation environment, there are a few main steps to follow.  First, add in all objects to the scene with their colliders, and ensure they are marked static.  Next, be sure to rebake the Nav Mesh.  Finally, set up the camera so all areas of the simulation environment area viewable.
+To correctly set up the simulation environment, there are a few main steps to follow.
 
 1. [Import Objects](#importing-objects-into-the-unity-project)
 2. [Place Objects and Add Colliders](#placing-gameobjects-and-adding-colliders)
@@ -23,9 +23,9 @@ Right-click in the desired folder and select the "Import New Asset" menu option.
 
 Once the object is imported into the project, drag and drop it into the scene.  Position it, scale it, and rotate it to the desired values.
 
-Once the object has been positioned, ensure that the object has a `Collider` component attached to it.  This can be done by selecting the object, and pressing the "Add Component" button near the button of the Inspector.
+Once the object has been positioned, ensure that the object has a `Collider` component attached to it.  This can be done by selecting the object, and pressing the "Add Component" button near the bottom of the Inspector.
 
-Objects can contain `SphereCollider`s, `BoxCollider`s, or `MeshCollider`s.  `SphereCollider`s and `BoxCollider`s are preferred due to their simplicity and efficiency, so prefer these two colliders when possible.
+Objects can contain `SphereCollider`s, `BoxCollider`s, or `MeshCollider`s.  <br/>`SphereCollider`s and `BoxCollider`s are recommended due to their simplicity and efficiency, so prefer these two colliders when possible.
 
 If the object in question has a more complex shape, a `MeshCollider` can be used.  Read the Unity documentation for [`MeshCollider` components](https://docs.unity3d.com/Manual/class-MeshCollider.html) to see details on how to configure the component.
 
@@ -35,13 +35,13 @@ After the desired collider has been added to the object, modify the collider to 
 
 After placing your GameObjects wherever you wish to create your environment, the only requirement is that every object in the environment that should block agents from passing through it (walls, queues, pillars, food lockers, tables, chairs etc.) **MUST** be marked as static.  To mark any GameObject as static, ensure the `Static` checkbox is checked.  The `Static` checkbox is located in the top right corner of the inspector for the current GameObject selected, to the right of the GameObject's name textbox.
 
-If the GameObject has children GameObject's, ensure those are marked as static as well.
+If the GameObject has children GameObjects, ensure those are marked as static as well.
 
 Any GameObject that does not directly block agents (such as [`PenaltyArea`s](config/simulation/penalty-area.md)) should **NOT** be marked as static, as this should only be done for solid, blocking objects.
 
 ### Rebaking the Nav Mesh
 
-To rebake the Nav Mesh, first ensure all GameObjects in the scene that should block agents are [marked as static](#marking-gameobjects-as-static).
+To rebake the Nav Mesh, first ensure all GameObjects in the scene that should block agents are [marked as static](#marking-gameobjects-as-static) and [have colliders on them](#placing-gameobjects-and-adding-colliders).
 
 Next, open the Navigation window.  This can be found via Unity's menu bar (Window>AI>Navigation).  Select the Bake tab in the Navigation window.  Leave the settings as they are, and click the Bake button at the bottom of the Navigation window.  If done correctly, all walkable areas should be highlighted in blue, and all non-walkable areas should not be highlighted at all.
 
