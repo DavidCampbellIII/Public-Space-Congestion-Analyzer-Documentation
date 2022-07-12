@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>WaypointLocation - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "WaypointLocation";
+        var mkdocs_page_input_path = "config\\waypoints\\waypoint-locations.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Simulation</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Waypoints</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">WaypointLocation</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-locate">How to Locate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tips">Tips</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Configuration &raquo;</li>
+          <li>Waypoints &raquo;</li><li>WaypointLocation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="waypointlocations">WaypointLocations</h1>
+<p><img alt="WaypointLocation Component" src="../../../img/waypointLocation.png" /></p>
+<h2 id="how-to-locate">How to Locate</h2>
+<p>The <code>WaypointLocation</code> component is located on any GameObject with a name containing "Waypoint", all of which can be found in the hierarchy.</p>
+<p>They are typically children of GameObjects that serve as <a href="../waypoints/"><code>Waypoint</code>s</a>.</p>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Use This <br/>Location</td>
+<td align="left">Toggles whether or not the position of the GameObject this <br/><code>WaypointLocation</code> is attached to represents the position agents will pathfind to.</td>
+</tr>
+<tr>
+<td align="left">Location</td>
+<td align="left"><em>Only applicable if <code>Use This Location</code> is <code>false</code>.</em><br/>Reference to position that agents will pathfind to.</td>
+</tr>
+<tr>
+<td align="left">Has Queue</td>
+<td align="left">Toggles whether or not this location has a queue.<br/><em>Note: If this is <code>false</code>, agents will not be able to form a queue to wait for this location <br/> if another agent is currently waiting at it.  This is ideal for things like seating, which don't <br/> typically have queues.</em></td>
+</tr>
+<tr>
+<td align="left">Use Shared <br/>Queue</td>
+<td align="left"><em>Only applicable if <code>Has Queue</code> is <code>true</code>.</em><br/>Toggles whether or not this location shares the same queue as another location.</td>
+</tr>
+<tr>
+<td align="left">Queue Location</td>
+<td align="left"><em>Only applicable if <code>Has Queue</code> is <code>true</code>.</em><br/>Reference to the position of the queue for this location.<br/>Typically, this is a child of the GameObject this <code>WaypointLocation</code> is attached <br/> to, with the name "Queue Start Location".</td>
+</tr>
+<tr>
+<td align="left">Queue</td>
+<td align="left"><em>Only applicable if <code>Has Queue</code> and <code>Use Shared Queue</code> is <code>true</code>.</em><br/>Reference to the shared queue this location uses.</td>
+</tr>
+<tr>
+<td align="left">Min Max <br/>Wait Time</td>
+<td align="left">Min and max wait time in seconds that an agent will wait at this location after <br/>arriving.  Wait time is randomly selected each time an agent arrives.</td>
+</tr>
+<tr>
+<td align="left">Override<br/>Outgoing<br/>Connections</td>
+<td align="left">Toggles whether or not this location should override the waypoint connections <br/>that are defined by the <a href="../waypoints/"><code>Waypoint</code></a> this location is a sublocation of.</td>
+</tr>
+<tr>
+<td align="left">Connecting <br/> Waypoints</td>
+<td align="left">All possible <a href="../../../about/#weights">weighted</a> waypoints an agent can visit after this specific location.<br/><em>Note: These can be override the default connections defined by the <a href="../waypoints/"><code>Waypoint</code></a> <br/>this location is a sublocation of</em>.</td>
+</tr>
+<tr>
+<td align="left">Has Rigid<br/>Queue</td>
+<td align="left"><em>Only applicable if <code>Has Queue</code> is <code>true</code>.</em><br/>Toggles whether or not this location has a <a href="../rigid-waypoint-queues/"><code>RigidWaypointQueue</code></a>.</td>
+</tr>
+<tr>
+<td align="left">Rigid Queue</td>
+<td align="left"><em>Only applicable if <code>Has Queue</code> and <code>Has Rigid Queue</code> is <code>true</code>.</em><br/>Reference to this location's <a href="../rigid-waypoint-queues/"><code>RigidWaypointQueue</code></a>.</td>
+</tr>
+<tr>
+<td align="left">Has Progression<br/>Path</td>
+<td align="left">Toggles whether or not this location has a <a href="../progression-paths/"><code>ProgressionPath</code></a>.<br/><a href="../progression-paths/"><code>ProgressionPath</code>s</a> must be a component on the same GameObject as this <br/><code>WaypointLocation</code>.</td>
+</tr>
+<tr>
+<td align="left">Draw Direction <br/>Indicator</td>
+<td align="left">Toggles whether or not the visual that shows the direction this location faces <br/> should appear.</td>
+</tr>
+<tr>
+<td align="left">Direction <br/>Indicator</td>
+<td align="left"><a href="../../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to direction indicator prefab.</td>
+</tr>
+<tr>
+<td align="left">Draw Line <br/>Connections</td>
+<td align="left">Toggles whether or not connections between each member in this location's<br/>queue should be visualized. The color of the line connection will interpolate <br/>between <code>Line Color Start</code> and <code>Line Color End</code> as it draws between each agent in the queue.</td>
+</tr>
+<tr>
+<td align="left">Line Color <br/>Start</td>
+<td align="left"><em>Only applicable if <code>Draw Line Connections</code> is <code>true</code>.</em><br/>Starting color of the line connection visual.</td>
+</tr>
+<tr>
+<td align="left">Line Color <br/>End</td>
+<td align="left"><em>Only applicable if <code>Draw Line Connections</code> is <code>true</code>.</em><br/>Ending color of the line connection visual.</td>
+</tr>
+<tr>
+<td align="left">Visualize Queue <br/>Start</td>
+<td align="left">Toggles whether or not the start of this location's queue should be visualized.</td>
+</tr>
+<tr>
+<td align="left">Visualize Queue <br/>Start Color</td>
+<td align="left"><em>Only applicable if <code>Visualize Queue Start</code> is <code>true</code>.</em><br/>Color of the queue start visual.</td>
+</tr>
+<tr>
+<td align="left">Num Agents At <br/>Waypoint</td>
+<td align="left">Uneditable field.  Used for debugging how many agents are currently waiting <br/> at this location.</td>
+</tr>
+<tr>
+<td align="left">Print Queue <br/>Button</td>
+<td align="left">Button that prints the names of all agents currently in this location's queue <br/>to the console.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><code>Queue Location</code> should always be positioned a bit back from the <code>Location</code> of the <code>WaypointLocation</code>.  This is to ensure agents waiting at the <code>Location</code> are not too close to agents waiting at the front of the queue.</li>
+<li>If <code>Has Progression Path</code> is <code>true</code>, a <a href="../progression-paths/"><code>ProgressionPath</code> component</a> must also be added to the same GameObject as the related <code>WaypointLocation</code>.  The <a href="../progression-paths/"><code>ProgressionPath</code> component</a> also requires a <a href="../lerpable-lines/"><code>LerpableLine</code> component</a> to work correctly.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../waypoints/" class="btn btn-neutral float-left" title="Waypoint"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../progression-paths/" class="btn btn-neutral float-right" title="ProgressionPath">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../waypoints/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../progression-paths/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

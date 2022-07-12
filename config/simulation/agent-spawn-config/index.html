@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>AgentSpawnConfig - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AgentSpawnConfig";
+        var mkdocs_page_input_path = "config\\simulation\\agent-spawn-config.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Simulation</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">AgentSpawnConfig</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-locate">How to Locate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#agentspawnblock">AgentSpawnBlock</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#agentspawnblock-settings">AgentSpawnBlock Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#spawn-rate-smoothness">Spawn Rate Smoothness</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Configuration &raquo;</li>
+          <li>Simulation &raquo;</li><li>AgentSpawnConfig</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="agentspawnconfig">AgentSpawnConfig</h1>
+<p><img alt="AgentSpawnConfig Component" src="../../../img/agentSpawnConfig.png" /></p>
+<h2 id="how-to-locate">How to Locate</h2>
+<p>The <code>AgentSpawnConfig</code> component is located on the GameObject named "Simulation", which can be found in the hierarchy.</p>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Constant Spawn <br />Rate</td>
+<td align="left">Toggles whether or not agents should spawn at a constant rate over the duration <br />of the simulation.</td>
+</tr>
+<tr>
+<td align="left">Start Time</td>
+<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>true</code>.</em><br />Start time of the simulation.</td>
+</tr>
+<tr>
+<td align="left">Total Num <br />Agents</td>
+<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>true</code>.</em><br />Total agents that will spawn between <code>Start Time</code> and <code>End Time</code>.</td>
+</tr>
+<tr>
+<td align="left">Agent Spawn <br />Blocks</td>
+<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>false</code>.</em><br />List of references to <a href="#agentspawnblock"><code>AgentSpawnBlocks</code></a>.</td>
+</tr>
+<tr>
+<td align="left">End Time</td>
+<td align="left">End time of the simulation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="agentspawnblock">AgentSpawnBlock</h2>
+<p><code>AgentSpawnBlock</code>s define how agents will spawn over a period of time.  The end time for each spawn block is the start time of the next spawn block (or <code>End Time</code> if it's the last spawn block).</p>
+<h3 id="agentspawnblock-settings">AgentSpawnBlock Settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Start Time</td>
+<td align="left">Start time of the simulation spawn block.<br />Also acts as the end time of the spawn block listed previously to this one.</td>
+</tr>
+<tr>
+<td align="left">Num Agents</td>
+<td align="left">Total agents that will spawn between <code>Start Time</code> of the spawn block, and the <code>Start Time</code> of the next block.</td>
+</tr>
+<tr>
+<td align="left">Agent Spawn <br />Rate Smoothness</td>
+<td align="left">How "smooth" the agents will spawn throughout the duration of the spawn block.<br />See <a href="#spawn-rate-smoothness">Spawn Rate Smoothness</a> for details.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spawn-rate-smoothness">Spawn Rate Smoothness</h3>
+<p>The value of <code>Agent Spawn Rate Smoothness</code> for an individual <a href="#agentspawnblock"><code>AgentSpawnBlock</code></a> represents the minimum percentage of time within a spawn block that all agents could possible spawn.</p>
+<p>For example, let's say we have a spawn block with a start time of 10am, a duration of 1 hour, and 60 agents that should spawn within this spawn block.  Internally, when a spawn block is processed, the variable <code>maxTimeBetweenAgents</code> is created to represent the max time that can pass before another agent must spawn in order to ensure all agents are spawned within the duration of a spawn block.  With 60 agents over a 1 hour spawn block, that means that an agent must spawn, at most, every 1 minute.</p>
+<p>Spawn rate smoothness simply represents a percentage of the <code>maxTimeBetweenAgents</code> for the lower bound of the time range for when an agent must be spawned in.  This range is then selected from at random.</p>
+<p>If spawn rate smoothness was 1, then the lower bound for an agent's spawn rate is 100% of <code>maxTimeBetweenAgents</code>, which gives us a random time between 1 minute and 1 minute (which is of course just 1 minute always, as you cannot select a random number between just one number).</p>
+<p>If the spawn rate smoothness was 0.1, then the lower bound for an agent's spawn rate is 10% of <code>maxTimeBetweenAgents</code>, which gives us a random time between 6 seconds and 1 minute.  This means that with a smoothness of 0.1, and 60 agents spawning over 1 hour, all 60 agents will spawn between 6 minutes at the lower bound, and 1 hour at the upper bound.  Randomness will determine how close to either of these bounds the simulation actually comes.</p>
+<p>In summary, the lower spawn rate smoothness, the most "clumped together" agents may spawn.  The higher it is, the most smooth and consistently agents will spawn across the duration of a spawn block.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../quick-start/" class="btn btn-neutral float-left" title="Quick Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../waypoint-planner/" class="btn btn-neutral float-right" title="WaypointPlanner">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../quick-start/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../waypoint-planner/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

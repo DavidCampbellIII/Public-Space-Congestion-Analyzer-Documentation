@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Specific Metrics - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Specific Metrics";
+        var mkdocs_page_input_path = "metrics\\specific-metrics.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Simulation</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Metrics</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Specific Metrics</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#agent-metrics">Agent Metrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#waypoint-metrics">Waypoint Metrics</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Info-Metrics &raquo;</li>
+          <li>Metrics &raquo;</li><li>Specific Metrics</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="specific-metrics">Specific Metrics</h1>
+<p>Metrics of specific elements of the simulation, such as agents and <a href="../../config/waypoints/waypoints/"><code>Waypoint</code>s</a> can be viewed.</p>
+<h2 id="agent-metrics">Agent Metrics</h2>
+<p>To see a specific agent's metrics, simply click on the agent in the simulation.  An <code>AgentMetricsDisplay</code> will appear, and show information about the agent.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Metric Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Total time in line</td>
+<td align="left">Total time the agent has spent in line.</td>
+</tr>
+<tr>
+<td align="left">Avg time in line</td>
+<td align="left">Average time the agent has spent in line.</td>
+</tr>
+<tr>
+<td align="left">Currently in line?</td>
+<td align="left">Whether or not the agent is currently in a line.</td>
+</tr>
+<tr>
+<td align="left">In line at waypoint</td>
+<td align="left">If currently in a line, which waypoint the line belongs to.</td>
+</tr>
+<tr>
+<td align="left">Currently targeting</td>
+<td align="left"><a href="../../config/waypoints/waypoints/"><code>Waypoint</code></a> the agent is currently targeting.</td>
+</tr>
+<tr>
+<td align="left">Next waypoint target</td>
+<td align="left"><a href="../../config/waypoints/waypoints/"><code>Waypoint</code></a> the agent is will be targeting next.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waypoint-metrics">Waypoint Metrics</h2>
+<p>To see a specific <a href="../../config/waypoints/waypoints/"><code>Waypoint</code>'s</a> metrics, simply click on the red sphere that represents the root of the <a href="../../config/waypoints/waypoints/"><code>Waypoint</code></a>.  A <code>WaypointMetricsDisplay</code> will appear, and show information about the <a href="../../config/waypoints/waypoints/"><code>Waypoint</code></a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Metric Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Max capacity</td>
+<td align="left">Max number of agents that have been in line for this waypoint at one time.</td>
+</tr>
+<tr>
+<td align="left">Total time in line</td>
+<td align="left">Sum of all time agents have spent in line for this waypoint.</td>
+</tr>
+<tr>
+<td align="left">Avg time in line</td>
+<td align="left">Average time a single agent has spent in line for this waypoint.</td>
+</tr>
+<tr>
+<td align="left">Num agents in line</td>
+<td align="left">Number of agents currently in line for this waypoint.</td>
+</tr>
+<tr>
+<td align="left">Num agents processed</td>
+<td align="left">Total number of agents that have been processed at this waypoint <br/>since the simulation began.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../global-metrics/" class="btn btn-neutral float-left" title="Global Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../global-metrics/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

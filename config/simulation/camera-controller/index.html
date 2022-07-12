@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>CameraController - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CameraController";
+        var mkdocs_page_input_path = "config\\simulation\\camera-controller.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Simulation</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">CameraController</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-locate">How to Locate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-control-the-camera">How to Control the Camera</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#moving">Moving</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rotating">Rotating</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zooming">Zooming</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-set-up-camera-boundaries">How to Set Up Camera Boundaries</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Configuration &raquo;</li>
+          <li>Simulation &raquo;</li><li>CameraController</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cameracontroller">CameraController</h1>
+<p><img alt="CameraController Component" src="../../../img/cameraController.png" /></p>
+<h2 id="how-to-locate">How to Locate</h2>
+<p>The <code>CameraController</code> component is located on the GameObject named "Main Camera", which can be found in the hierarchy.</p>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Rotation Speed</td>
+<td align="left">Speed that the camera rotates.</td>
+</tr>
+<tr>
+<td align="left">Zoom Speed</td>
+<td align="left">Speed that the camera zooms in and out.</td>
+</tr>
+<tr>
+<td align="left">Move Speed</td>
+<td align="left">Speed that the camera moves, whether via keys or the mouse cursor near the <br />edge of the screen.</td>
+</tr>
+<tr>
+<td align="left">Min Boundary</td>
+<td align="left">Min coordinates of the camera boundary.<br />When adjusting this, it is recommend to have <code>Visualize Boundaries</code> set to <code>true</code> <br />in order to more easily define accurate camera boundaries.</td>
+</tr>
+<tr>
+<td align="left">Max Boundary</td>
+<td align="left">Max coordinates of the camera boundary.<br />When adjusting this, it is recommend to have <code>Visualize Boundaries</code> set to <code>true</code> <br />in order to more easily define accurate camera boundaries.</td>
+</tr>
+<tr>
+<td align="left">Screen Edge <br />Ratio</td>
+<td align="left">Percentage from the edge of the screen that is considered the screen's edge.<br />For example, 0.05 would mean the screen's edge is anywhere that is 5% the <br />width of the physical monitor screen.</td>
+</tr>
+<tr>
+<td align="left">Cursor On <br />Edge Threshold</td>
+<td align="left">Time in seconds that the mouse cursor must reside within the screen's edge for the <br /> camera to move.</td>
+</tr>
+<tr>
+<td align="left">Visualize <br />Boundaries</td>
+<td align="left">Toggles whether or not the camera's boundaries should be visualized.</td>
+</tr>
+<tr>
+<td align="left">Visualization <br />Volume Color</td>
+<td align="left"><em>Only applicable if <code>Visualize Boundaries</code> is <code>true</code>.</em><br/>Color of the visualization of the camera's boundaries.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-control-the-camera">How to Control the Camera</h2>
+<h3 id="moving">Moving</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Effect on Camera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">W</td>
+<td align="left">Move forward</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">Move backward</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">Move left</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">Move right</td>
+</tr>
+</tbody>
+</table>
+<p>The camera can also be moved by moving the mouse cursor towards the edge of the screen that corresponds with the desired direction of movement.</p>
+<h3 id="rotating">Rotating</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Effect on Camera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Q</td>
+<td align="left">Rotate left</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">Rotate right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zooming">Zooming</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Effect on Camera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Mousewheel Scroll Up</td>
+<td align="left">Zoom in</td>
+</tr>
+<tr>
+<td align="left">Mousewheel Scroll Down</td>
+<td align="left">Zoom out</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-set-up-camera-boundaries">How to Set Up Camera Boundaries</h2>
+<p>Whenever a simulation environment is created or modified, the <code>CameraController</code> camera boundaries must be updated to ensure the camera can view every part of the simulation environment.  To do this, simply toggle <code>Visualize Boundaries</code> to <code>true</code> on the <code>CameraController</code> to see the current boundaries.  Then, change the min and max boundary values on the x, y, and z until the boundaries match the desired volume.  The GameObject the <code>CameraController</code> is attached to (which has the name "Main Camera") can then be moved to its desired starting location.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../time-control/" class="btn btn-neutral float-left" title="Time Control"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../agents/agent-manager/" class="btn btn-neutral float-right" title="AgentManager">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../time-control/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../agents/agent-manager/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

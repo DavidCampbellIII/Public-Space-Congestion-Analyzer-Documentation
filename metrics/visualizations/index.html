@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Visualizations - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Visualizations";
+        var mkdocs_page_input_path = "metrics\\visualizations.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Simulation</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/simulation/camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config/waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Info</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Visualizations</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#toggle-visualizations">Toggle Visualizations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#global">Global</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#specific-waypoint">Specific Waypoint</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#visualizationmanager">VisualizationManager</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-locate">How to Locate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Info-Metrics &raquo;</li>
+          <li>Info &raquo;</li><li>Visualizations</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="visualizations">Visualizations</h1>
+<p>Connections between waypoints can be visualized according to the weight of a connection relative to two waypoints.</p>
+<p>These connections will be wider when the weight of that connection is stronger.  The connection visualizations will also be colored by their weight relative to other connections as defined by the configured gradients in the <a href="#visualization-manager"><code>VisualizationManager</code></a>.</p>
+<h2 id="toggle-visualizations">Toggle Visualizations</h2>
+<p>Visualizations can be toggled either globally (all waypoints at once), or one at a time on a waypoint-by-waypoint basis.</p>
+<h3 id="global">Global</h3>
+<p>Visualizations for all waypoints can be toggled on and off at any time during a running simulation by pressing the <code>v</code> key.</p>
+<h3 id="specific-waypoint">Specific Waypoint</h3>
+<p>Visualizations for a specific waypoint can be toggled on and off any time during a running simulation by selecting the waypoint and toggling the visualizations for it. See <a href="../../config/waypoints/waypoints/#toggling-a-specific-waypoints-visualizations">Toggling a Specific Waypoint's Visualizations</a> for more details.</p>
+<h2 id="visualizationmanager">VisualizationManager</h2>
+<p><img alt="VisualizationManager Component" src="../../img/visualizationManager.png" /></p>
+<h3 id="how-to-locate">How to Locate</h3>
+<p>The VisualizationManager component is located on the GameObject with the name "VisualizationManager", which can be found in the hierarchy.</p>
+<h3 id="settings">Settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Visualization <br />Line</td>
+<td align="left"><a href="../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to <code>LineRenderer</code> to use for visualizations.</td>
+</tr>
+<tr>
+<td align="left">Waypoint Connection <br /> Gradient</td>
+<td align="left">Gradient of visualization colors defined by the weight of connections <br />between waypoints.<br /> From left to right, colors represent smaller to larger weights.</td>
+</tr>
+<tr>
+<td align="left">Sublocation <br />Connection Gradient</td>
+<td align="left">Gradient of visualization colors defined by the weight of sublocations <br /> for a single waypoint.<br />From left to right, colors represent smaller to larger weights.</td>
+</tr>
+<tr>
+<td align="left">Max Line Width</td>
+<td align="left">Max width the line visualization for connections can be.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../config/waypoints/lerpable-lines/" class="btn btn-neutral float-left" title="LerpableLine"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../global-metrics/" class="btn btn-neutral float-right" title="Global Metrics">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../config/waypoints/lerpable-lines/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../global-metrics/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>AgentManager - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AgentManager";
+        var mkdocs_page_input_path = "config\\agents\\agent-manager.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../quick-start/">Quick Start</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Simulation</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../simulation/camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Agents</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">AgentManager</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-locate">How To Locate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Configuration &raquo;</li>
+          <li>Agents &raquo;</li><li>AgentManager</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="agentmanager">AgentManager</h1>
+<p><img alt="AgentManager Component" src="../../../img/agentManager.png" /></p>
+<h2 id="how-to-locate">How To Locate</h2>
+<p>The <code>AgentManager</code> component is located on the GameObject with the name "AgentManager", which can be found in the hierarchy.</p>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Setting</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Auto Simulate</td>
+<td align="left">Toggles whether or not agents should automatically simulate.<br />If true, agents will simulate according to their configured time blocks as soon as the <br />simulation is started.</td>
+</tr>
+<tr>
+<td align="left">Agent</td>
+<td align="left"><a href="../../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to agent to use in simulation.</td>
+</tr>
+<tr>
+<td align="left">Spawn Pos</td>
+<td align="left">Reference to the position where agents will spawn when they first enter the <br />simulation.</td>
+</tr>
+<tr>
+<td align="left">Planner</td>
+<td align="left"><a href="../../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to the WaypointPlanner agents use to <br />create their Plan</td>
+</tr>
+<tr>
+<td align="left">Progress Display</td>
+<td align="left"><a href="../../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to the simulation progress display</td>
+</tr>
+<tr>
+<td align="left">Agent Settings</td>
+<td align="left"><a href="../../../about/#advanced-user-settings"><strong>ADVANCED USER SETTING</strong></a>. Reference to the AgentSettings <br />ScriptableObject.</td>
+</tr>
+<tr>
+<td align="left">Path Update <br />Rate</td>
+<td align="left">Number of times per second that each agent will recalculate its path.<br />Higher values result in more accurate paths, but are more expensive to simulate.</td>
+</tr>
+<tr>
+<td align="left">Min Max Speed</td>
+<td align="left">Min and max movement speed of an agent.  Whenever a new agent is added to the <br />simulation, it will have a speed between these two values.</td>
+</tr>
+<tr>
+<td align="left">Waypoint Dist <br />Threshold</td>
+<td align="left">Min distance away from a target an agent must be to consider having "reached" <br />their target.</td>
+</tr>
+<tr>
+<td align="left">Min Max Queue <br />Spacing</td>
+<td align="left">Min and max amount of spacing an agent in line will give between itself and <br /> the agent in front of it.</td>
+</tr>
+<tr>
+<td align="left">Line Look <br />Ahead</td>
+<td align="left">Number of agents ahead of itself an agent will look in a line when trying to position <br /> itself at the back of the line.<br/ >Larger values result in straighter lines, but are more expensive.</td>
+</tr>
+<tr>
+<td align="left">Local Avoidance <br />Type</td>
+<td align="left">Type of local avoidance agents will use while simulating.<br /><code>NEVER</code>- Agents never use local avoidance<br /><code>IN_LINE_ONLY</code>- Agents only avoid other agents that are currently in a line or at a <br />waypoint<br /><code>ALWAYS</code>- Agents always use local avoidance, whether they are in lines or walking <br />from waypoint to waypoint.  <strong>This type is very expensive to simulate and not <br />recommended for simulations with a time scale of greater than 2.5x.</strong></td>
+</tr>
+<tr>
+<td align="left">Local Avoidance <br />Threshold</td>
+<td align="left"><em>Only applicable if <code>Local Avoidance Type</code> is not <code>NEVER</code>.</em><br/>Number of additional nodes another agent would need to walk before preferring <br />to walk through the obstacle agent.</td>
+</tr>
+<tr>
+<td align="left">Min Dist <br />Local Avoidance <br />Update</td>
+<td align="left"><em>Only applicable if <code>Local Avoidance Type</code> is not <code>NEVER</code>.</em><br/>Min distance an agent must move before it updates the nodes affected by its own <br />local avoidance.</td>
+</tr>
+<tr>
+<td align="left">Enable Manual <br />Agent Spawning</td>
+<td align="left">Toggles whether or not agents can be manually spawned in by the user.</td>
+</tr>
+<tr>
+<td align="left">Manual Agent <br />Spawn Key</td>
+<td align="left"><em>Only applicable if <code>Enable Manual Agent Spawning</code> is <code>true</code>.</em><br/>Key to press to manually spawn an agent into the simulation.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../simulation/camera-controller/" class="btn btn-neutral float-left" title="CameraController"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../waypoints/waypoints/" class="btn btn-neutral float-right" title="Waypoint">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../simulation/camera-controller/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../waypoints/waypoints/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

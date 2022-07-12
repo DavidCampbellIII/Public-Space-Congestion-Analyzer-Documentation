@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Quick Start - Public Space Congestion Analyzer Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Quick Start";
+        var mkdocs_page_input_path = "quick-start.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Public Space Congestion Analyzer Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">General</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Quick Start</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-environment">Setting up the Environment</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#importing-objects-into-the-unity-project">Importing Objects into the Unity Project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#placing-gameobjects-and-adding-colliders">Placing GameObjects and Adding Colliders</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#marking-gameobjects-as-static">Marking GameObjects as Static</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rebaking-the-nav-mesh">Rebaking the Nav Mesh</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-pathfinding-grid">Configure Pathfinding Grid</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-up-the-simulation-camera">Setting up the Simulation Camera</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-waypoints">Setting up Waypoints</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-up-starting-and-ending-waypoints">Setting up Starting and Ending Waypoints</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-up-main-waypoints">Setting up Main Waypoints</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuring-agent-spawn-rates">Configuring Agent Spawn Rates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pathfinding-and-queue-formation-influencing">Pathfinding and Queue Formation Influencing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#time-control">Time Control</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#metrics">Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Configuration</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Simulation</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../config/simulation/agent-spawn-config/">AgentSpawnConfig</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/simulation/waypoint-planner/">WaypointPlanner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/simulation/penalty-area/">PenaltyArea</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/simulation/time-control/">Time Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/simulation/camera-controller/">CameraController</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Agents</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../config/agents/agent-manager/">AgentManager</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Waypoints</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../config/waypoints/waypoints/">Waypoint</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/waypoints/waypoint-locations/">WaypointLocation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/waypoints/progression-paths/">ProgressionPath</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/waypoints/rigid-waypoint-queues/">RigidWaypointQueue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../config/waypoints/lerpable-lines/">LerpableLine</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Info-Metrics</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../metrics/visualizations/">Visualizations</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../metrics/global-metrics/">Global Metrics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Public Space Congestion Analyzer Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>General &raquo;</li><li>Quick Start</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="simulation-quick-start">Simulation Quick Start</h1>
+<h2 id="setting-up-the-environment">Setting up the Environment</h2>
+<p>To correctly set up the simulation environment, there are a few main steps to follow.  First, add in all objects to the scene with their colliders, and ensure they are marked static.  Next, be sure to rebake the Nav Mesh.  Finally, set up the camera so all areas of the simulation environment area viewable.</p>
+<ol>
+<li><a href="#importing-objects-into-the-unity-project">Import Objects</a></li>
+<li><a href="#placing-gameobjects-and-adding-colliders">Place Objects and Add Colliders</a></li>
+<li><a href="#marking-gameobjects-as-static">Mark Objects as Static</a></li>
+<li><a href="#rebaking-the-nav-mesh">Rebake Nav Mesh</a></li>
+<li><a href="#configure-pathfinding-grid">Configure Pathfinding Grid</a></li>
+<li><a href="#setting-up-the-simulation-camera">Set Up Simulation Camera</a></li>
+</ol>
+<p><em>Note: Steps 3 and 4 must be preformed every time anything about the environment changes.  If an object is added, moved, or removed, ensure all objects are still static, and rebake the Nav Mesh.</em></p>
+<h3 id="importing-objects-into-the-unity-project">Importing Objects into the Unity Project</h3>
+<p>To import objects into the Unity project, create a folder in the Project Panel for your assets.  The folder "Raw Imports" contains the currently imported assets.</p>
+<p>Right-click in the desired folder and select the "Import New Asset" menu option.  Alternatively, dragging and dropping the model's file into the Project Panel also works to import it into the project.</p>
+<h3 id="placing-gameobjects-and-adding-colliders">Placing GameObjects and Adding Colliders</h3>
+<p>Once the object is imported into the project, drag and drop it into the scene.  Position it, scale it, and rotate it to the desired values.</p>
+<p>Once the object has been positioned, ensure that the object has a <code>Collider</code> component attached to it.  This can be done by selecting the object, and pressing the "Add Component" button near the button of the Inspector.</p>
+<p>Objects can contain <code>SphereCollider</code>s, <code>BoxCollider</code>s, or <code>MeshCollider</code>s.  <code>SphereCollider</code>s and <code>BoxCollider</code>s are preferred due to their simplicity and efficiency, so prefer these two colliders when possible.</p>
+<p>If the object in question has a more complex shape, a <code>MeshCollider</code> can be used.  Read the Unity documentation for <a href="https://docs.unity3d.com/Manual/class-MeshCollider.html"><code>MeshCollider</code> components</a> to see details on how to configure the component.</p>
+<p>After the desired collider has been added to the object, modify the collider to ensure it surrounds the entirety of the object.  These collision bounds will be used in following steps to ensure the object is correctly blocked out on the Nav Mesh.</p>
+<h3 id="marking-gameobjects-as-static">Marking GameObjects as Static</h3>
+<p>After placing your GameObjects wherever you wish to create your environment, the only requirement is that every object in the environment that should block agents from passing through it (walls, queues, pillars, food lockers, tables, chairs etc.) <strong>MUST</strong> be marked as static.  To mark any GameObject as static, ensure the <code>Static</code> checkbox is checked.  The <code>Static</code> checkbox is located in the top right corner of the inspector for the current GameObject selected, to the right of the GameObject's name textbox.</p>
+<p>If the GameObject has children GameObject's, ensure those are marked as static as well.</p>
+<p>Any GameObject that does not directly block agents (such as <a href="../config/simulation/penalty-area/"><code>PenaltyArea</code>s</a>) should <strong>NOT</strong> be marked as static, as this should only be done for solid, blocking objects.</p>
+<h3 id="rebaking-the-nav-mesh">Rebaking the Nav Mesh</h3>
+<p>To rebake the Nav Mesh, first ensure all GameObjects in the scene that should block agents are <a href="#marking-gameobjects-as-static">marked as static</a>.</p>
+<p>Next, open the Navigation window.  This can be found via Unity's menu bar (Window&gt;AI&gt;Navigation).  Select the Bake tab in the Navigation window.  Leave the settings as they are, and click the Bake button at the bottom of the Navigation window.  If done correctly, all walkable areas should be highlighted in blue, and all non-walkable areas should not be highlighted at all.</p>
+<h3 id="configure-pathfinding-grid">Configure Pathfinding Grid</h3>
+<p>Once the Nav Mesh has been rebaked, the Pathfinding Grid needs to be reconfigured.  The Pathfinding Grid allows the agents to move from point to point and works with the Nav Mesh to provide accurate pathfinding.</p>
+<p>First, locate the GameObject with the name "A*", which can be found in the hierarchy.  There should only be a single component attached to it, called <code>Pathfinder</code>.  If a grid is not seen overlaid across your simulation environment in the Unity Scene window, scroll to the bottom of the "A*" GameObject and ensure the option <code>Show Graphs</code> is set to <code>true</code>.</p>
+<p>Once the grid has been located, position it near the center of the simulation environment.</p>
+<p>After it is positioned, increase or decrease the grid size so that the entire simulation environment is covered.  This can be done by changing the <code>Width (nodes)</code> and <code>Depth (nodes)</code> settings on the <code>Pathfinder</code> component.</p>
+<p>The grid should encompass the entire simulation environment, but it should not be any larger than necessary.  Massively large grids are slower and less accurate than smaller ones.</p>
+<p>There are other settings on the <code>Pathfinder</code> that affect how the agents' pathfinding works, but these are all considered <a href="../about/#advanced-user-settings"><strong>ADVANCED USER SETTINGS</strong></a> and should only be changed if the user is absolutely certain of what they are doing.</p>
+<h3 id="setting-up-the-simulation-camera">Setting up the Simulation Camera</h3>
+<p>Whenever a new environment for a simulation is created, the camera that views the simulation environment must be configured so all parts of the simulation are viewable.  See <a href="../config/simulation/camera-controller/">CameraController</a> for details.</p>
+<hr />
+<h2 id="setting-up-waypoints">Setting up Waypoints</h2>
+<p>Due to how the simulation works, waypoints are grouped into two categories:</p>
+<ul>
+<li>Starting/Ending Waypoints</li>
+<li>Main Waypoints</li>
+</ul>
+<h3 id="setting-up-starting-and-ending-waypoints">Setting up Starting and Ending Waypoints</h3>
+<p>To set up the starting and ending waypoints for the simulation, use the <a href="../config/simulation/waypoint-planner/"><code>WaypointPlanner</code> component</a>.</p>
+<h3 id="setting-up-main-waypoints">Setting up Main Waypoints</h3>
+<p>To set up all main waypoints (any waypoint that is not a starting or ending waypoint), see <a href="../config/waypoints/waypoints/#setting-up-waypoints">Setting up Waypoints</a>.</p>
+<hr />
+<h2 id="configuring-agent-spawn-rates">Configuring Agent Spawn Rates</h2>
+<p>To configure the rate and frequency in which agents spawn over the duration of the simulation, use the <a href="../config/simulation/agent-spawn-config/"><code>AgentSpawnConfig</code> component</a>.</p>
+<hr />
+<h2 id="pathfinding-and-queue-formation-influencing">Pathfinding and Queue Formation Influencing</h2>
+<p>One way to influence how agents pathfind from waypoint to waypoint and how queues are formed while agents wait for waypoints is with the <a href="../config/simulation/penalty-area/"><code>PenaltyArea</code> object</a>.</p>
+<hr />
+<h2 id="time-control">Time Control</h2>
+<p>For more details about how to change the time scale of a simulation, see <a href="../config/simulation/time-control/">Time Control</a>.</p>
+<hr />
+<h2 id="metrics">Metrics</h2>
+<p>To view and analyze metrics relating to the global state of the simulation, see <a href="../metrics/global-metrics/">Global Metrics</a>.</p>
+<p>To view metrics specific to a single agent or waypoint, see <a href="../metrics/specific-metrics/">Specific Metrics</a>.</p>
+<p>To view visualizations of connections between waypoints and connections between a waypoint and it's sublocations, see <a href="../metrics/visualizations/">Visualizations</a>.</p>
+<hr />
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Never change <strong>anything</strong> while the simulation is running, as this can cause errors. Also, any changes made while the simulation is running are reverted to their origin values when the simulation is stopped</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../config/simulation/agent-spawn-config/" class="btn btn-neutral float-right" title="AgentSpawnConfig">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../config/simulation/agent-spawn-config/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
