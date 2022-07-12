@@ -1,0 +1,27 @@
+site_name: Public Space Congestion Analyzer Docs
+nav:
+    - General:
+        - About: about.md
+        - Quick Start: quick-start.md
+    - Configuration:
+        - Simulation: 
+            - AgentSpawnConfig: config/simulation/agent-spawn-config.md
+            - WaypointPlanner: config/simulation/waypoint-planner.md
+            - PenaltyArea: config/simulation/penalty-area.md
+            - Time Control: config/simulation/time-control.md
+            - CameraController: config/simulation/camera-controller.md
+        - Agents: 
+            - AgentManager: config/agents/agent-manager.md
+        - Waypoints: 
+            - Waypoint: config/waypoints/waypoints.md
+            - WaypointLocation: config/waypoints/waypoint-locations.md
+            - ProgressionPath: config/waypoints/progression-paths.md
+            - RigidWaypointQueue: config/waypoints/rigid-waypoint-queues.md
+            - LerpableLine: config/waypoints/lerpable-lines.md
+    - Info-Metrics: 
+        - Info:
+            - Visualizations: metrics/visualizations.md
+        - Metrics:
+            - Global Metrics: metrics/global-metrics.md
+            - Specific Metrics: metrics/specific-metrics.md
+theme: readthedocs
