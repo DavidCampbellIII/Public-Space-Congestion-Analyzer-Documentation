@@ -46,6 +46,14 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Quick Start</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-new-simulation-scene">Creating a New Simulation Scene</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#duplicating-the-example-scene">Duplicating the Example Scene</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuring-the-new-scene">Configuring the New Scene</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-environment">Setting up the Environment</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#importing-objects-into-the-unity-project">Importing Objects into the Unity Project</a>
@@ -162,6 +170,31 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="simulation-quick-start">Simulation Quick Start</h1>
+<p>This quick start guide will teach you how to create a new simulation scene, configure new and existing simulation scenes, and run simulations!</p>
+<ol>
+<li><a href="#creating-a-new-simulation-scene">Creating a New Simulation Scene</a></li>
+<li><a href="#setting-up-the-environment">Setting up the Environment of a New or Existing Scene</a></li>
+</ol>
+<h2 id="creating-a-new-simulation-scene">Creating a New Simulation Scene</h2>
+<p>To create a new simulation scene, simply <a href="#duplicating-the-example-scene">duplicate the example scene</a> and <a href="#configuring-the-new-scene">reconfigure the new scene</a> with the desired layout and settings.</p>
+<h3 id="duplicating-the-example-scene">Duplicating the Example Scene</h3>
+<p>Find the example simulation scene.  It is located in the Project Panel, under the folder named "Scenes".  The example scene is named "Main".</p>
+<p>Single click on the example scene so that it is selected, and then press <code>Ctrl</code> + <code>d</code> to duplicate the scene.  A new scene icon should appear in that folder.</p>
+<p>Rename the new scene to whatever is desired.  To rename a file or folder, right click on it and select "Rename", or press <code>F2</code> while it is selected.</p>
+<p>To open the new scene, simply double click on it.  To verify which scene is currently active, look at the top of the hierarchy.  The current scene name will be displayed at the top of the hierarchy next to the Unity icon.</p>
+<p>Once the new simulation scene has been created and loaded as the current scene, the environment can be configured.</p>
+<p><em>Note: All simulations must be contained within the same Unity project, with each simulation existing in its own independent scene.<br/>To create a simulation using these tools in a brand new Unity project would require a far more detailed set up and is not within the scope of this documentation.</em></p>
+<h3 id="configuring-the-new-scene">Configuring the New Scene</h3>
+<p>When configuring the environment, the following GameObjects are allowed to be duplicated, moved, deleted, or otherwise changed:</p>
+<ul>
+<li>Blocking volumes</li>
+<li>Waypoints</li>
+<li>Any object that is a part of the environment (props, walls, etc.)</li>
+<li><a href="../config/simulation/penalty-area/"><code>PenaltyArea</code>s</a></li>
+</ul>
+<p><strong>Any GameObject that is not listed above should never be moved, duplicated, or deleted.  Doing so can cause a variety of issues for that simulation scene.</strong></p>
+<p>For detailed instructions on how to configure the environment, see <a href="#setting-up-the-environment">Setting up the Environment</a>.</p>
+<hr />
 <h2 id="setting-up-the-environment">Setting up the Environment</h2>
 <p>To correctly set up the simulation environment, there are a few main steps to follow.</p>
 <ol>
