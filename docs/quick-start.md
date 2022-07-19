@@ -1,5 +1,43 @@
 # Simulation Quick Start
 
+This quick start guide will teach you how to create a new simulation scene, configure new and existing simulation scenes, and run simulations!
+
+1. [Creating a New Simulation Scene](#creating-a-new-simulation-scene)
+2. [Setting up the Environment of a New or Existing Scene](#setting-up-the-environment)
+
+## Creating a New Simulation Scene
+
+To create a new simulation scene, simply [duplicate the example scene](#duplicating-the-example-scene) and [reconfigure the new scene](#configuring-the-new-scene) with the desired layout and settings.
+
+### Duplicating the Example Scene
+
+Find the example simulation scene.  It is located in the Project Panel, under the folder named "Scenes".  The example scene is named "Main".
+
+Single click on the example scene so that it is selected, and then press `Ctrl` + `d` to duplicate the scene.  A new scene icon should appear in that folder.
+
+Rename the new scene to whatever is desired.  To rename a file or folder, right click on it and select "Rename", or press `F2` while it is selected.
+
+To open the new scene, simply double click on it.  To verify which scene is currently active, look at the top of the hierarchy.  The current scene name will be displayed at the top of the hierarchy next to the Unity icon.
+
+Once the new simulation scene has been created and loaded as the current scene, the environment can be configured.
+
+*Note: All simulations must be contained within the same Unity project, with each simulation existing in its own independent scene.<br/>To create a simulation using these tools in a brand new Unity project would require a far more detailed set up and is not within the scope of this documentation.*
+
+### Configuring the New Scene
+
+When configuring the environment, the following GameObjects are allowed to be duplicated, moved, deleted, or otherwise changed:
+
+- Blocking volumes
+- Waypoints
+- Any object that is a part of the environment (props, walls, etc.)
+- [`PenaltyArea`s](config/simulation/penalty-area.md)
+
+**Any GameObject that is not listed above should never be moved, duplicated, or deleted.  Doing so can cause a variety of issues for that simulation scene.**
+
+For detailed instructions on how to configure the environment, see [Setting up the Environment](#setting-up-the-environment).
+
+---
+
 ## Setting up the Environment
 
 To correctly set up the simulation environment, there are a few main steps to follow.
