@@ -114,6 +114,12 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Playback</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/playback/">Playback</a>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -143,7 +149,7 @@
                 <h1 id="agentspawnconfig">AgentSpawnConfig</h1>
 <p><img alt="AgentSpawnConfig Component" src="../../../img/agentSpawnConfig.png" /></p>
 <h2 id="how-to-locate">How to Locate</h2>
-<p>The <code>AgentSpawnConfig</code> component is located on the GameObject named "Simulation", which can be found in the hierarchy.</p>
+<p>The <code>AgentSpawnConfig</code> component is located on the GameObject named "SimulationManager", which can be found in the hierarchy.</p>
 <h2 id="settings">Settings</h2>
 <table>
 <thead>
@@ -155,28 +161,20 @@
 <tbody>
 <tr>
 <td align="left">Constant Spawn <br />Rate</td>
-<td align="left">Toggles whether or not agents should spawn at a constant rate over the duration <br />of the simulation.</td>
-</tr>
-<tr>
-<td align="left">Start Time</td>
-<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>true</code>.</em><br />Start time of the simulation.</td>
-</tr>
-<tr>
-<td align="left">Total Num <br />Agents</td>
-<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>true</code>.</em><br />Total agents that will spawn between <code>Start Time</code> and <code>End Time</code>.</td>
+<td align="left">Toggles whether or not agents should spawn at a constant rate over the duration <br />of the simulation.<br />If <code>true</code>, only a single <code>AgentSpawnBlock</code> can be configured, with an enforced <br /><a href="#spawn-rate-smoothness"><code>Agent Spawn Rate Smoothness</code></a> of 1.</td>
 </tr>
 <tr>
 <td align="left">Agent Spawn <br />Blocks</td>
 <td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>false</code>.</em><br />List of references to <a href="#agentspawnblock"><code>AgentSpawnBlocks</code></a>.</td>
 </tr>
 <tr>
-<td align="left">End Time</td>
-<td align="left">End time of the simulation.</td>
+<td align="left">Total Agents<br />To Process</td>
+<td align="left"><em>Only applicable if <code>Constant Spawn Rate</code> is <code>false</code>.</em><br />A sum of all the agents that will be spawned across all spawn blocks.<br />Used for debugging only, and is not meant to be modified directly by the user.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="agentspawnblock">AgentSpawnBlock</h2>
-<p><code>AgentSpawnBlock</code>s define how agents will spawn over a period of time.  The end time for each spawn block is the start time of the next spawn block (or <code>End Time</code> if it's the last spawn block).</p>
+<p><code>AgentSpawnBlock</code>s define how agents will spawn over a block of time.  Blocks are automatically ordered by their <code>Start Time</code>, and are processed in order from earliest to latest.  In other words, the order of the blocks in the list does not matter, as the list is self-organizing.</p>
 <h3 id="agentspawnblock-settings">AgentSpawnBlock Settings</h3>
 <table>
 <thead>
@@ -188,11 +186,19 @@
 <tbody>
 <tr>
 <td align="left">Start Time</td>
-<td align="left">Start time of the simulation spawn block.<br />Also acts as the end time of the spawn block listed previously to this one.</td>
+<td align="left">Start time of the simulation spawn block.</td>
+</tr>
+<tr>
+<td align="left">End Time</td>
+<td align="left">End time of the simulation spawn block.</td>
 </tr>
 <tr>
 <td align="left">Num Agents</td>
-<td align="left">Total agents that will spawn between <code>Start Time</code> of the spawn block, and the <code>Start Time</code> of the next block.</td>
+<td align="left">Total agents that will spawn between <code>Start Time</code> and <code>End Time</code> of the spawn block.</td>
+</tr>
+<tr>
+<td align="left">Agent Color</td>
+<td align="left">Color of agents that will spawn during this spawn block.</td>
 </tr>
 <tr>
 <td align="left">Agent Spawn <br />Rate Smoothness</td>
@@ -206,7 +212,7 @@
 <p>Spawn rate smoothness simply represents a percentage of the <code>maxTimeBetweenAgents</code> for the lower bound of the time range for when an agent must be spawned in.  This range is then selected from at random.</p>
 <p>If spawn rate smoothness was 1, then the lower bound for an agent's spawn rate is 100% of <code>maxTimeBetweenAgents</code>, which gives us a random time between 1 minute and 1 minute (which is of course just 1 minute always, as you cannot select a random number between just one number).</p>
 <p>If the spawn rate smoothness was 0.1, then the lower bound for an agent's spawn rate is 10% of <code>maxTimeBetweenAgents</code>, which gives us a random time between 6 seconds and 1 minute.  This means that with a smoothness of 0.1, and 60 agents spawning over 1 hour, all 60 agents will spawn between 6 minutes at the lower bound, and 1 hour at the upper bound.  Randomness will determine how close to either of these bounds the simulation actually comes.</p>
-<p>In summary, the lower spawn rate smoothness, the most "clumped together" agents may spawn.  The higher it is, the most smooth and consistently agents will spawn across the duration of a spawn block.</p>
+<p>In summary, the lower spawn rate smoothness, the more "clumped together" agents may spawn.  The higher it is, the more smooth and consistently agents will spawn across the duration of a spawn block.</p>
               
             </div>
           </div><footer>

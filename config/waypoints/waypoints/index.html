@@ -78,6 +78,10 @@
     <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#setting-up-waypoints">Setting up Waypoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setting-up-alerts">Setting up Alerts</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#selecting-a-waypoint">Selecting a Waypoint</a>
         <ul>
@@ -111,6 +115,12 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Playback</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/playback/">Playback</a>
                 </li>
     </ul>
                   </li>
@@ -166,6 +176,26 @@
 <td align="left">Toggles whether or not agents should wait at this waypoint.<br/>If false, agents will not spend any time at this waypoint, and will ignore the <br /> wait time specified by the waypoint's <a href="../waypoint-locations/"><code>WaypointLocation</code></a>.</td>
 </tr>
 <tr>
+<td align="left">Should Alert</td>
+<td align="left"><em>Only applicable if <code>Should Gather Metrics</code> is <code>true</code>.</em><br />Toggles whether or not this waypoint should fire off alerts when certain <br />conditions are met.</td>
+</tr>
+<tr>
+<td align="left">Alert On Num <br />Agents In Line</td>
+<td align="left"><em>Only applicable if <code>Should Alert</code> is <code>true</code>.</em><br />Toggles whether or not this waypoint should fire off an alert when the number <br />of agents in line at this waypoint meets or exceeds the specified threshold.</td>
+</tr>
+<tr>
+<td align="left">Num Agents <br />In Line Threshold</td>
+<td align="left"><em>Only applicable if <code>Alert On Num Agents In Line</code> is <code>true</code>.</em><br />Number of agents in line at this waypoint that must be met or exceeded <br />for an alert to be fired off.</td>
+</tr>
+<tr>
+<td align="left">Alert On Mins <br />In Line</td>
+<td align="left"><em>Only applicable if <code>Should Alert</code> is <code>true</code>.</em><br />Toggles whether or not this waypoint should fire off an alert when the minutes <br />a single agent has spent in line at this waypoint meets or exceeds the <br />specified threshold.</td>
+</tr>
+<tr>
+<td align="left">Num Minutes <br />In Line Threshold</td>
+<td align="left"><em>Only applicable if <code>Alert On Mins In Line</code> is <code>true</code>.</em><br />Number of minutes a single agent can wait in line at this waypoint that must be <br />met or exceeded for an alert to be fired off.</td>
+</tr>
+<tr>
 <td align="left">Connecting <br/> Waypoints</td>
 <td align="left">All possible <a href="../../..#weights">weighted</a> waypoints an agent can visit after this waypoint.<br/><em>Note: These can be overridden by individual sublocations of this waypoint</em>.</td>
 </tr>
@@ -197,8 +227,12 @@
 </table>
 <h2 id="setting-up-waypoints">Setting up Waypoints</h2>
 <p>To create a waypoint, simply duplicate an existing Waypoint and move it to the desired location.</p>
+<h3 id="setting-up-alerts">Setting up Alerts</h3>
+<p>To set up Alerts on a Waypoint, first make sure that <code>Should Gather Metrics</code> is <code>true</code>.  Then, set <code>Should Alert</code> to <code>true</code>.  This will allow you to set up alerts on the Waypoint.</p>
+<p>From there, you can set up alerts based on the number of agents in line at the Waypoint, or the number of minutes a single agent has spent in line at the Waypoint.</p>
+<p>When an alert is fired off, it will be added to the timeline in the <a href="../../../metrics/playback/">Playback</a> menu so it can be further investigated later.</p>
 <h2 id="selecting-a-waypoint">Selecting a Waypoint</h2>
-<p>To select a waypoint, simply click on the red sphere that defines the location of the waypoint while the simulation is running.</p>
+<p>To select a waypoint, simply click on the name label of the waypoint while the simulation is running.</p>
 <p>When a waypoint is selected correctly, its metrics display will appear.  This shows information about that waypoint, such as its name, the number of agents it has processed, the total time in line agents have spent waiting for this waypoint, and more.</p>
 <p>It also allows for the waypoint to have its visualizations toggled on or off.</p>
 <p>To deselect a waypoint, simply click on the red 'X' icon in the upper right corner of the metrics display.</p>

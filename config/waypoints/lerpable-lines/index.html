@@ -89,7 +89,9 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#how-to-create-and-position-line-nodes">How to Create and Position Line Nodes</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#how-to-assign-line-nodes-to-the-path">How to Assign Line Nodes to the Path</a>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-remove-line-nodes">How to Remove Line Nodes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-change-the-order-of-line-nodes">How to Change the Order of Line Nodes</a>
     </li>
         </ul>
     </li>
@@ -113,6 +115,12 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../../metrics/global-metrics/">Global Metrics</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../metrics/specific-metrics/">Specific Metrics</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Playback</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../metrics/playback/">Playback</a>
                 </li>
     </ul>
                   </li>
@@ -199,16 +207,18 @@ The <code>LerpableLine</code> is required for both these other components.</p>
 </tbody>
 </table>
 <h2 id="line-nodes">Line Nodes</h2>
-<p>A <code>LerpableLine</code> is simply a path defined by a list of points.  Each point is represented by a single <code>Transform</code> on a GameObject that is a child of the GameObject containing the <code>LerpableLine</code> component.  Each Line Node is named "LerpableLineNode_???" with the "???" representing the order of the nodes.</p>
+<p>A <code>LerpableLine</code> is simply a path defined by a list of points.  Each point is represented by a single <code>Transform</code> on a GameObject that is a child of the GameObject containing the <code>LerpableLine</code> component.  Each Line Node is named "LerpableLineNode_???" with the "???" representing the order of the nodes.  </p>
+<p>However, the name is purely for organizational purposes, as the order of the nodes is determined by the order of the nodes in the <code>Nodes</code> list.</p>
 <h3 id="how-to-create-and-position-line-nodes">How to Create and Position Line Nodes</h3>
-<p>To create Line Nodes, simply create an Empty GameObject, or duplicate an existing line node.  Rename the Line Node to reflect the order it will be in the path.</p>
+<p>To create Line Nodes, simply press the "Add Path Node" button at the bottom of the component.  This will automatically create, name, and add the new node to the <code>Nodes</code> list.  Then, simply move the node to the desired location.</p>
 <p>Position the node to the desired location.</p>
-<h3 id="how-to-assign-line-nodes-to-the-path">How to Assign Line Nodes to the Path</h3>
-<p>Simply assign the node GameObjects in the <code>Nodes</code> list in the order the path should be formed.  Ensure that no empty slots remain in the <code>Nodes</code> list, as this will cause the <code>LerpableLine</code> to work incorrectly.</p>
+<h3 id="how-to-remove-line-nodes">How to Remove Line Nodes</h3>
+<p>Simply select the node you want to remove and delete it.  The <code>Nodes</code> list will automatically update.</p>
+<h3 id="how-to-change-the-order-of-line-nodes">How to Change the Order of Line Nodes</h3>
+<p>The order a agent will progress through a <code>LerpableLine</code> is determined by the order of the nodes in the <code>Nodes</code> list.  To change the order, simply drag and drop the nodes in the list to the desired order.  This can be done by clicking and dragging three horizontal lines to the left of the node name.</p>
 <h2 id="tips">Tips</h2>
 <ul>
-<li>To more easily position <a href="#line-nodes">Line Nodes</a>, first assign them to the <code>Nodes</code> list so they can be visualized.</li>
-<li>Keep the naming of the <a href="#line-nodes">Line Nodes</a> consistent and reflective of their order in the path to maintain organization and more easily perform maintenance.</li>
+<li>Always use the "Add Path Node" button to add new nodes.  This will ensure that the node is properly named and added to the <code>Nodes</code> list.  Creating nodes manually can result in errors if not set up correctly.</li>
 </ul>
               
             </div>
