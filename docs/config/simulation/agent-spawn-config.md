@@ -4,28 +4,28 @@
 
 ## How to Locate
 
-The `AgentSpawnConfig` component is located on the GameObject named "Simulation", which can be found in the hierarchy.
+The `AgentSpawnConfig` component is located on the GameObject named "SimulationManager", which can be found in the hierarchy.
 
 ## Settings
 
 Setting | Description
 :-------- | :------------------------------------------------------------------------------------------------------------------------------------
-Constant Spawn <br />Rate | Toggles whether or not agents should spawn at a constant rate over the duration <br />of the simulation.
-Start Time | *Only applicable if `Constant Spawn Rate` is `true`.*<br />Start time of the simulation.
-Total Num <br />Agents | *Only applicable if `Constant Spawn Rate` is `true`.*<br />Total agents that will spawn between `Start Time` and `End Time`.
+Constant Spawn <br />Rate | Toggles whether or not agents should spawn at a constant rate over the duration <br />of the simulation.<br />If `true`, only a single `AgentSpawnBlock` can be configured, with an enforced <br />[`Agent Spawn Rate Smoothness`](#spawn-rate-smoothness) of 1.
 Agent Spawn <br />Blocks | *Only applicable if `Constant Spawn Rate` is `false`.*<br />List of references to [`AgentSpawnBlocks`](#agentspawnblock).
-End Time | End time of the simulation.
+Total Agents<br />To Process | *Only applicable if `Constant Spawn Rate` is `false`.*<br />A sum of all the agents that will be spawned across all spawn blocks.<br />Used for debugging only, and is not meant to be modified directly by the user.
 
 ## AgentSpawnBlock
 
-`AgentSpawnBlock`s define how agents will spawn over a period of time.  The end time for each spawn block is the start time of the next spawn block (or `End Time` if it's the last spawn block).
+`AgentSpawnBlock`s define how agents will spawn over a block of time.  Blocks are automatically ordered by their `Start Time`, and are processed in order from earliest to latest.  In other words, the order of the blocks in the list does not matter, as the list is self-organizing.
 
 ### AgentSpawnBlock Settings
 
 Setting | Description
 :-------- | :------------------------------------------------------------------------------------------------------------------------------------
-Start Time | Start time of the simulation spawn block.<br />Also acts as the end time of the spawn block listed previously to this one.
-Num Agents | Total agents that will spawn between `Start Time` of the spawn block, and the `Start Time` of the next block.
+Start Time | Start time of the simulation spawn block.
+End Time | End time of the simulation spawn block.
+Num Agents | Total agents that will spawn between `Start Time` and `End Time` of the spawn block.
+Agent Color | Color of agents that will spawn during this spawn block.
 Agent Spawn <br />Rate Smoothness | How "smooth" the agents will spawn throughout the duration of the spawn block.<br />See [Spawn Rate Smoothness](#spawn-rate-smoothness) for details.
 
 ### Spawn Rate Smoothness
@@ -40,4 +40,4 @@ If spawn rate smoothness was 1, then the lower bound for an agent's spawn rate i
 
 If the spawn rate smoothness was 0.1, then the lower bound for an agent's spawn rate is 10% of `maxTimeBetweenAgents`, which gives us a random time between 6 seconds and 1 minute.  This means that with a smoothness of 0.1, and 60 agents spawning over 1 hour, all 60 agents will spawn between 6 minutes at the lower bound, and 1 hour at the upper bound.  Randomness will determine how close to either of these bounds the simulation actually comes.
 
-In summary, the lower spawn rate smoothness, the most "clumped together" agents may spawn.  The higher it is, the most smooth and consistently agents will spawn across the duration of a spawn block.
+In summary, the lower spawn rate smoothness, the more "clumped together" agents may spawn.  The higher it is, the more smooth and consistently agents will spawn across the duration of a spawn block.

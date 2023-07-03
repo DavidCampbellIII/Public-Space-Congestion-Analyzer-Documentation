@@ -77,11 +77,20 @@ If the GameObject has children GameObjects, ensure those are marked as static as
 
 Any GameObject that does not directly block agents (such as [`PenaltyArea`s](config/simulation/penalty-area.md)) should **NOT** be marked as static, as this should only be done for solid, blocking objects.
 
+### Configuring GameObjects for the Nav Mesh
+
+After all GameObjects have been given a collider and marked as static, the next step is to ensure all objects that should block agents contain a `NavMeshModifier` component.  This component is used to tell the Nav Mesh what areas are walkable and what areas are not.
+If set up correctly, the object will appear to cut out a hole in the blue walkable area of the Nav Mesh (see [Rebaking the Nav Mesh](#rebaking-the-nav-mesh)).
+
+To add a `NavMeshModifier` component to a GameObject, select the GameObject and press the "Add Component" button near the bottom of the Inspector.  Search for "Nav Mesh Modifier" and select the component.  The default values for this component do not need to be changed.
+
 ### Rebaking the Nav Mesh
 
-To rebake the Nav Mesh, first ensure all GameObjects in the scene that should block agents are [marked as static](#marking-gameobjects-as-static) and [have colliders on them](#placing-gameobjects-and-adding-colliders).
+To rebake the Nav Mesh, first ensure all GameObjects in the scene that should block agents are [marked as static](#marking-gameobjects-as-static), [have colliders on them](#placing-gameobjects-and-adding-colliders), and [have a `NavMeshModifier` component](#configuring-gameobjects-for-the-nav-mesh) attached to them.
 
-Next, open the Navigation window.  This can be found via Unity's menu bar (Window>AI>Navigation).  Select the Bake tab in the Navigation window.  Leave the settings as they are, and click the Bake button at the bottom of the Navigation window.  If done correctly, all walkable areas should be highlighted in blue, and all non-walkable areas should not be highlighted at all.
+Next, find the GameObject that acts as the floor for the environment.  If you're using the duplicated example scene, this object is just called "Floor".  Make sure this Floor object has both a `NavMeshSurface` and `NavMeshModifier` component attached to it.  If not, add both components to the Floor object.  The default values for these components (whether you had to add them manually or not) are fine as they are and do not need to be changed.
+
+Click the Bake button at the bottom of the `NavMeshSurface` component.  If done correctly, all walkable areas should be highlighted in blue, and all non-walkable areas should not be highlighted at all.
 
 ### Configure Pathfinding Grid
 
@@ -145,6 +154,14 @@ To view and analyze metrics relating to the global state of the simulation, see 
 To view metrics specific to a single agent or waypoint, see [Specific Metrics](metrics/specific-metrics.md).
 
 To view visualizations of connections between waypoints and connections between a waypoint and it's sublocations, see [Visualizations](metrics/visualizations.md).
+
+---
+
+## Playback and Alerts
+
+To view simulation playback history and alert flags, see [Playback](metrics/playback.md).
+
+To set up alerts for specific waypoints, see [Waypoint Alerts](config/waypoints/waypoints.md#setting-up-alerts).
 
 ---
 

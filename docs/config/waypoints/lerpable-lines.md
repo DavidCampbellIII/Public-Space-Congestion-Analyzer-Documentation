@@ -24,19 +24,24 @@ Member Spacing<br/>Visualization Color | *Only applicable if `Draw Member Spacin
 
 ## Line Nodes
 
-A `LerpableLine` is simply a path defined by a list of points.  Each point is represented by a single `Transform` on a GameObject that is a child of the GameObject containing the `LerpableLine` component.  Each Line Node is named "LerpableLineNode_???" with the "???" representing the order of the nodes.
+A `LerpableLine` is simply a path defined by a list of points.  Each point is represented by a single `Transform` on a GameObject that is a child of the GameObject containing the `LerpableLine` component.  Each Line Node is named "LerpableLineNode_???" with the "???" representing the order of the nodes.  
+
+However, the name is purely for organizational purposes, as the order of the nodes is determined by the order of the nodes in the `Nodes` list.
 
 ### How to Create and Position Line Nodes
 
-To create Line Nodes, simply create an Empty GameObject, or duplicate an existing line node.  Rename the Line Node to reflect the order it will be in the path.
+To create Line Nodes, simply press the "Add Path Node" button at the bottom of the component.  This will automatically create, name, and add the new node to the `Nodes` list.  Then, simply move the node to the desired location.
 
 Position the node to the desired location.
 
-### How to Assign Line Nodes to the Path
+### How to Remove Line Nodes
 
-Simply assign the node GameObjects in the `Nodes` list in the order the path should be formed.  Ensure that no empty slots remain in the `Nodes` list, as this will cause the `LerpableLine` to work incorrectly.
+Simply select the node you want to remove and delete it.  The `Nodes` list will automatically update.
+
+### How to Change the Order of Line Nodes
+
+The order a agent will progress through a `LerpableLine` is determined by the order of the nodes in the `Nodes` list.  To change the order, simply drag and drop the nodes in the list to the desired order.  This can be done by clicking and dragging three horizontal lines to the left of the node name.
 
 ## Tips
 
-- To more easily position [Line Nodes](#line-nodes), first assign them to the `Nodes` list so they can be visualized.
-- Keep the naming of the [Line Nodes](#line-nodes) consistent and reflective of their order in the path to maintain organization and more easily perform maintenance.
+- Always use the "Add Path Node" button to add new nodes.  This will ensure that the node is properly named and added to the `Nodes` list.  Creating nodes manually can result in errors if not set up correctly.
