@@ -10,7 +10,6 @@ The `AgentManager` component is located on the GameObject with the name "AgentMa
 
 Setting | Description
 :-------- | :------------------------------------------------------------------------------------------------------------------------------------
-Auto Simulate | Toggles whether or not agents should automatically simulate.<br />If `true`, agents will simulate according to their configured time blocks as soon <br />as the simulation is started.
 Agent | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to agent to use in simulation.
 Spawn Pos | Reference to the position where agents will spawn when they first enter the <br />simulation.
 Planner | [**ADVANCED USER SETTING**](../../index.md#advanced-user-settings). Reference to the WaypointPlanner agents use to <br />create their Plan
