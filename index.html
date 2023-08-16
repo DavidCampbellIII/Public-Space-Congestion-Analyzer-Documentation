@@ -108,11 +108,12 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Playback</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="metrics/playback/">Playback</a>
-                </li>
-    </ul>
+              </ul>
+              <p class="caption"><span class="caption-text">Recording and Playback</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="recording/simulation-setup/">Saving/Loading</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="recording/playback/">Playback</a>
                   </li>
               </ul>
       </div>
@@ -156,7 +157,7 @@
 <li>Long queues that push into walls perpendicular to the average direction of the queue don't always wrap correctly</li>
 <li>Poor performance when using the <code>ALWAYS</code> local avoidance type.  This is unavoidable without huge changes to the underlying agent logic to convert it to an ECS-based architecture.</li>
 <li>Simulation may be inaccurate in pathfinding and agent processing at high simulation time scales.  If you notice poor framerate while simulating, and accuracy is also an issue, try turning down the time scale for improvements</li>
-<li>Various limitations surrounding recording and playback.  See <a href="metrics/playback/#limitations">Playback</a> for more details.</li>
+<li>Various limitations surrounding recording and playback.  See <a href="recording/playback/#limitations">Playback</a> and <a href="recording/simulation-setup/#limitations">Saving/Loading</a> for more details.</li>
 </ul>
               
             </div>

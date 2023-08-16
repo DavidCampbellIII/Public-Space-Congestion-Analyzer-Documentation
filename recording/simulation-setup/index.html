@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Playback - Public Space Congestion Analyzer Docs</title>
+    <title>Saving/Loading - Public Space Congestion Analyzer Docs</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Playback";
-        var mkdocs_page_input_path = "metrics\\playback.md";
+        var mkdocs_page_name = "Saving/Loading";
+        var mkdocs_page_input_path = "recording\\simulation-setup.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -85,36 +85,39 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Info-Metrics</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="#">Info</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../visualizations/">Visualizations</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../metrics/visualizations/">Visualizations</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Metrics</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../global-metrics/">Global Metrics</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../metrics/global-metrics/">Global Metrics</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../specific-metrics/">Specific Metrics</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../metrics/specific-metrics/">Specific Metrics</a>
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Playback</a>
+              </ul>
+              <p class="caption"><span class="caption-text">Recording and Playback</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Saving/Loading</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Playback</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#how-to-locate">How to Locate</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-locate">How to Locate</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-to-use">How to Use</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-save-a-recording">How to Save a Recording</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#viewing-alerts">Viewing Alerts</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-load-a-recording">How to Load a Recording</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#limitations">Limitations</a>
+    <li class="toctree-l2"><a class="reference internal" href="#transferring-recordings-between-machines">Transferring Recordings Between Machines</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a>
     </li>
     </ul>
-                </li>
-    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../playback/">Playback</a>
                   </li>
               </ul>
       </div>
@@ -131,8 +134,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Info-Metrics &raquo;</li>
-          <li>Playback &raquo;</li><li>Playback</li>
+          <li>Recording and Playback &raquo;</li><li>Saving/Loading</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -142,35 +144,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="playback">Playback</h1>
-<p><img alt="Playback Menu" src="../../img/playbackMenu.png" /></p>
+                <h1 id="savingloading-simulation-recordings">Saving/Loading Simulation Recordings</h1>
+<p><img alt="Simulation Setup Menu" src="../../img/simulationSetupMenu.png" /></p>
 <h2 id="how-to-locate">How to Locate</h2>
-<p>To view the playback menu, simply press 'r' to open the menu.  </p>
-<p>Please note that the simulation must be fully completed before the playback menu can be opened.  A simulation is considered fully completed when all agents have reached their final waypoint and despawned.  One can determine this is the case when the simulation time no longer increases (and the simulation is not paused).</p>
-<h2 id="how-to-use">How to Use</h2>
-<p>To use the playback feature, simply use the time controls in the lower left corner to control the playback speed of the recording.  Just like with the simulation <a href="../../config/simulation/time-control/">Time Controls</a>, the playback speed can be paused, sped up, or slowed down.</p>
-<p>Pressing the "Play" button will play the simulation from the current time (if it is currently paused), and also reset the playback speed to 1x.</p>
-<p>The current time in the playback can also be set by clicking on the timeline to jump the playback to that moment in time, similar to how a YouTube video might work.</p>
-<p>The current progress of the playback is displayed above the timeline, showing the current time in the playback, as well as the percentage of the playback that has been completed.</p>
-<h2 id="viewing-alerts">Viewing Alerts</h2>
-<p>Alerts are displayed on the timeline as yellow "flags".  These flags can be clicked on to view the alert in more detail.  The alert will detail which waypoint fired off the alert, what type of alert it was, and a description about what specifically caused the alert to be fired off.</p>
-<p>Currently, alerts are fired off once and only once when a specific condition is met.  This means that if the condition is met again on the same waypoint, the alert will not be fired off again.  For example, if a waypoint is set to fire off an alert when the waypoint's line gets past 10 agents, the alert will fire off only when this threshold is met.  If the line then shortens to 9 agents, and then grows back to 11 agents, the alert will not fire off again.  This is to prevent the timeline from being cluttered with alerts that are fired off multiple times for essentially the same reason.</p>
-<p>In the future, we may add the ability to define a cool-down period for alerts, so that they can be fired off again after a certain amount of time has passed, or once a condition has been unmet and then met again.</p>
+<p>When starting up the program, you will be greeted with the Simulation Setup menu.  This menu is used to either start a new simulation and record it, or load a previously recorded simulation and play it back.</p>
+<h2 id="how-to-save-a-recording">How to Save a Recording</h2>
+<p>To start a new simulation recording, simply press "Record new simulation" on the simulation setup menu.  This will open a file explorer window to the folder where the recording must be saved.</p>
+<p><em>Note: Currently, recordings can ONLY be saved to this folder.</em></p>
+<p><img alt="Simulation Recordings Folder" src="../../img/simulationRecordingsFolder.png" /></p>
+<p>Once this window has opened, you must create a new folder with the name of the recording.  This folder will contain all of the files that make up the recording.  Once the folder has been created, ensure that it is selected (This can be verified by seeing it highlighted, and also the folder name in the bottom text box is the same name.  See the above image as an example.), and press "Select Folder" to begin the simulation.</p>
+<p>When the simulation completes, you will be able to view the recording in the <a href="../playback/">Playback</a> menu as normal.</p>
+<h2 id="how-to-load-a-recording">How to Load a Recording</h2>
+<p>To load an existing recording, first ensure that the currently loaded scene is the same scene that the recording was originally made on.  If not, then the results of the playback will look incorrect, as currently only agent positions are recorded, not the level layout.</p>
+<p>Next, simply press "Load saved simulation" on the simulation setup menu.  This will open a file explorer window to the folder where the recording must be loaded from.  If the recording you want to load is not in this folder, move it to this folder before continuing.</p>
+<p>Next, select the recording folder, and press "Select Folder" to begin the loading process.  Once the loading process is complete, the <a href="../playback/">Playback menu</a> will open automatically, and the recording can be viewed as normal.</p>
+<h2 id="transferring-recordings-between-machines">Transferring Recordings Between Machines</h2>
+<p>Recordings can be transferred between machines just as any other folder might be.  Simply copy the recording folder from the machine it was saved on, and paste it into the same folder on the machine you want to load it on.  Then, follow the usual steps to <a href="#how-to-load-a-recording">load the recording</a>.</p>
 <h2 id="limitations">Limitations</h2>
-<p>Currently, the playback feature is limited in the following ways:</p>
+<p>Currently, the recording saving/loading feature is limited in the following ways:</p>
 <ul>
-<li>Simulations must be fully completed before they can be played back.</li>
-<li>Playback frame rate is limited to prevent performance issues and may cause playback to appear choppy.</li>
-<li>Simulation playback is not able to be saved or exported in any way, meaning that once the simulation is closed, the playback is lost.</li>
-<li>Playback recordings have a low max memory constraint, meaning that simulations with a large number of agents or long durations may lead to memory issues which can cause the simulation to crash.</li>
-<li>Only agents are recorded in the playback, meaning metrics changing over time (such as the number of agents processed by a waypoint at that point in time) are not recorded and cannot be viewed changing over time.</li>
+<li>Simulations must be fully completed to record properly.  Simulations that are stopped before they complete will generate a corrupt recording that will break if you try to play it back.</li>
+<li>Recording files must <strong>ALWAYS</strong> be saved in and loaded from the <code>Application.persistentDataPath</code> folder location.  The path to the folder on Windows looks something like this: <code>C:\Users\{YOUR_USERNAME_HERE}\AppData\LocalLow\DefaultCompany\Waytrics</code>.  This is always the default folder that is opened when saving or loading a recording, so you should never have to worry about this so long as all recordings are saved in and loaded from that folder.</li>
+<li>Depending on the complexity of the recording (especially large numbers of agents simulating over a small period of time), the recording may have slight hitches as files are saved/loaded.  This usually isn't noticeable, but may be more noticeable on slower machines.  In the event that a file is taking too long to save/load (more than a second or so), a popup message will appear in the middle of the screen to let you know that the program is still working on saving/loading the recording file.</li>
 </ul>
 <p>All of the above limitations can be overcome by further development.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../specific-metrics/" class="btn btn-neutral float-left" title="Specific Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../metrics/specific-metrics/" class="btn btn-neutral float-left" title="Specific Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../playback/" class="btn btn-neutral float-right" title="Playback">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -193,8 +196,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../specific-metrics/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../metrics/specific-metrics/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../playback/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

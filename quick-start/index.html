@@ -88,6 +88,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#metrics">Metrics</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#savingloading-simulation-recordings">Saving/Loading Simulation Recordings</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#playback-and-alerts">Playback and Alerts</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#tips">Tips</a>
@@ -148,11 +150,12 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Playback</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../metrics/playback/">Playback</a>
-                </li>
-    </ul>
+              </ul>
+              <p class="caption"><span class="caption-text">Recording and Playback</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../recording/simulation-setup/">Saving/Loading</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recording/playback/">Playback</a>
                   </li>
               </ul>
       </div>
@@ -185,6 +188,18 @@
 <li><a href="#creating-a-new-simulation-scene">Creating a New Simulation Scene</a></li>
 <li><a href="#setting-up-the-environment">Setting up the Environment of a New or Existing Scene</a></li>
 </ol>
+<p>Additional useful information:</p>
+<ul>
+<li><a href="#setting-up-waypoints">Setting up Waypoints</a></li>
+<li><a href="#configuring-agent-spawn-rates">Configuring Agent Spawn Rates</a></li>
+<li><a href="#pathfinding-and-queue-formation-influencing">Pathfinding and Queue Formation Influencing</a></li>
+<li><a href="#time-control">Time Control</a></li>
+<li><a href="#metrics">Metrics</a></li>
+<li><a href="#savingloading-simulation-recordings">Saving and Loading Recordings of Simulations</a></li>
+<li><a href="#playback-and-alerts">Playback and Alerts</a></li>
+<li><a href="#tips">Tips</a></li>
+</ul>
+<hr />
 <h2 id="creating-a-new-simulation-scene">Creating a New Simulation Scene</h2>
 <p>To create a new simulation scene, simply <a href="#duplicating-the-example-scene">duplicate the example scene</a> and <a href="#configuring-the-new-scene">reconfigure the new scene</a> with the desired layout and settings.</p>
 <h3 id="duplicating-the-example-scene">Duplicating the Example Scene</h3>
@@ -272,13 +287,16 @@ If set up correctly, the object will appear to cut out a hole in the blue walkab
 <p>To view metrics specific to a single agent or waypoint, see <a href="../metrics/specific-metrics/">Specific Metrics</a>.</p>
 <p>To view visualizations of connections between waypoints and connections between a waypoint and it's sublocations, see <a href="../metrics/visualizations/">Visualizations</a>.</p>
 <hr />
+<h2 id="savingloading-simulation-recordings">Saving/Loading Simulation Recordings</h2>
+<p>To save and load simulation recordings, see <a href="../recording/simulation-setup/">Saving/Loading</a>.</p>
+<hr />
 <h2 id="playback-and-alerts">Playback and Alerts</h2>
-<p>To view simulation playback history and alert flags, see <a href="../metrics/playback/">Playback</a>.</p>
+<p>To view simulation playback history and alert flags, see <a href="../recording/playback/">Playback</a>.</p>
 <p>To set up alerts for specific waypoints, see <a href="../config/waypoints/waypoints/#setting-up-alerts">Waypoint Alerts</a>.</p>
 <hr />
 <h2 id="tips">Tips</h2>
 <ul>
-<li>Never change <strong>anything</strong> while the simulation is running, as this can cause errors. Also, any changes made while the simulation is running are reverted to their origin values when the simulation is stopped</li>
+<li>Never change <strong>anything</strong> while the simulation is running, as this can cause errors. Also, any changes made while the simulation is running are reverted to their origin values when the simulation is stopped.</li>
 </ul>
               
             </div>
