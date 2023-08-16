@@ -6,7 +6,7 @@
 
 To view the playback menu, simply press 'r' to open the menu.  
 
-Please note that the simulation must be fully completed before the playback menu can be opened.  A simulation is considered fully completed when all agents have reached their final waypoint and despawned.  One can determine this is the case when the simulation time no longer increases (and the simulation is not paused).
+Please note that the simulation must be fully completed before the playback menu can be opened.  A simulation is considered fully completed when all agents have reached their final waypoint and despawned.  A popup message will appear in the middle of the screen when the simulation is completed.
 
 ## How to Use
 
@@ -30,10 +30,9 @@ In the future, we may add the ability to define a cool-down period for alerts, s
 
 Currently, the playback feature is limited in the following ways:
 
-- Simulations must be fully completed before they can be played back.
+- Simulations must be fully completed before they can be played back.  Simulations that are stopped before they complete will generate a corrupt recording that will break if you try to play it back.
 - Playback frame rate is limited to prevent performance issues and may cause playback to appear choppy.
-- Simulation playback is not able to be saved or exported in any way, meaning that once the simulation is closed, the playback is lost.
-- Playback recordings have a low max memory constraint, meaning that simulations with a large number of agents or long durations may lead to memory issues which can cause the simulation to crash.
-- Only agents are recorded in the playback, meaning metrics changing over time (such as the number of agents processed by a waypoint at that point in time) are not recorded and cannot be viewed changing over time.
+- Only agents are recorded in the playback, meaning metrics changing over time (such as the number of agents processed by a waypoint at that point in time) are not recorded and cannot be viewed changing over time.  
+- Level layout changes are not recorded.  If you record a simulation, then change the level layout, then play back the recording, the level layout will not change back to what it was when the recording was made.  To get around this, you can duplicate the level and make changes to the duplicate, then record the simulation on the duplicate level.  Just keep in mind that recordings will only work on the level they were recorded on.
 
 All of the above limitations can be overcome by further development.
