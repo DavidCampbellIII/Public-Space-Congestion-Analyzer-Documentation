@@ -5,6 +5,19 @@ This quick start guide will teach you how to create a new simulation scene, conf
 1. [Creating a New Simulation Scene](#creating-a-new-simulation-scene)
 2. [Setting up the Environment of a New or Existing Scene](#setting-up-the-environment)
 
+Additional useful information:
+
+- [Setting up Waypoints](#setting-up-waypoints)
+- [Configuring Agent Spawn Rates](#configuring-agent-spawn-rates)
+- [Pathfinding and Queue Formation Influencing](#pathfinding-and-queue-formation-influencing)
+- [Time Control](#time-control)
+- [Metrics](#metrics)
+- [Saving and Loading Recordings of Simulations](#savingloading-simulation-recordings)
+- [Playback and Alerts](#playback-and-alerts)
+- [Tips](#tips)
+
+---
+
 ## Creating a New Simulation Scene
 
 To create a new simulation scene, simply [duplicate the example scene](#duplicating-the-example-scene) and [reconfigure the new scene](#configuring-the-new-scene) with the desired layout and settings.
@@ -157,9 +170,15 @@ To view visualizations of connections between waypoints and connections between 
 
 ---
 
+## Saving/Loading Simulation Recordings
+
+To save and load simulation recordings, see [Saving/Loading](recording/simulation-setup.md).
+
+---
+
 ## Playback and Alerts
 
-To view simulation playback history and alert flags, see [Playback](metrics/playback.md).
+To view simulation playback history and alert flags, see [Playback](recording/playback.md).
 
 To set up alerts for specific waypoints, see [Waypoint Alerts](config/waypoints/waypoints.md#setting-up-alerts).
 
@@ -167,4 +186,4 @@ To set up alerts for specific waypoints, see [Waypoint Alerts](config/waypoints/
 
 ## Tips
 
-- Never change **anything** while the simulation is running, as this can cause errors. Also, any changes made while the simulation is running are reverted to their origin values when the simulation is stopped
+- Never change **anything** while the simulation is running, as this can cause errors. Also, any changes made while the simulation is running are reverted to their origin values when the simulation is stopped.

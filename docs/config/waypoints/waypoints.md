@@ -36,7 +36,7 @@ To set up Alerts on a Waypoint, first make sure that `Should Gather Metrics` is 
 
 From there, you can set up alerts based on the number of agents in line at the Waypoint, or the number of minutes a single agent has spent in line at the Waypoint.
 
-When an alert is fired off, it will be added to the timeline in the [Playback](../../metrics/playback.md) menu so it can be further investigated later.
+When an alert is fired off, it will be added to the timeline in the [Playback](../../recording/playback.md) menu so it can be further investigated later.
 
 ## Selecting a Waypoint
 

@@ -24,6 +24,7 @@ nav:
         - Metrics:
             - Global Metrics: metrics/global-metrics.md
             - Specific Metrics: metrics/specific-metrics.md
-        - Recording and Playback:
-            - Playback: metrics/playback.md
+    - Recording and Playback:
+        - Saving/Loading: recording/simulation-setup.md
+        - Playback: recording/playback.md
 theme: readthedocs

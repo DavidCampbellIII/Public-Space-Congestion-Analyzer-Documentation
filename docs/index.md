@@ -27,4 +27,4 @@ Currently, the simulation has a few limitations in its functionality.  Here are 
 - Long queues that push into walls perpendicular to the average direction of the queue don't always wrap correctly
 - Poor performance when using the `ALWAYS` local avoidance type.  This is unavoidable without huge changes to the underlying agent logic to convert it to an ECS-based architecture.
 - Simulation may be inaccurate in pathfinding and agent processing at high simulation time scales.  If you notice poor framerate while simulating, and accuracy is also an issue, try turning down the time scale for improvements
-- Various limitations surrounding recording and playback.  See [Playback](metrics/playback.md#limitations) for more details.
+- Various limitations surrounding recording and playback.  See [Playback](recording/playback.md#limitations) and [Saving/Loading](recording/simulation-setup.md#limitations) for more details.

@@ -31,7 +31,7 @@ In the future, we may add the ability to define a cool-down period for alerts, s
 Currently, the playback feature is limited in the following ways:
 
 - Simulations must be fully completed before they can be played back.  Simulations that are stopped before they complete will generate a corrupt recording that will break if you try to play it back.
-- Playback frame rate is limited to prevent performance issues and may cause playback to appear choppy.
+- Playback frame rate is limited to prevent performance issues and may cause playback to appear slightly less smooth than the actual simulation.
 - Only agents are recorded in the playback, meaning metrics changing over time (such as the number of agents processed by a waypoint at that point in time) are not recorded and cannot be viewed changing over time.  
 - Level layout changes are not recorded.  If you record a simulation, then change the level layout, then play back the recording, the level layout will not change back to what it was when the recording was made.  To get around this, you can duplicate the level and make changes to the duplicate, then record the simulation on the duplicate level.  Just keep in mind that recordings will only work on the level they were recorded on.
 
