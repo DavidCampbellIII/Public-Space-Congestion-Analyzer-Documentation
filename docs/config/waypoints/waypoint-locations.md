@@ -37,4 +37,5 @@ Print Queue <br/>Button | Button that prints the names of all agents currently i
 ## Tips
 
 - `Queue Location` should always be positioned a bit back from the `Location` of the `WaypointLocation`.  This is to ensure agents waiting at the `Location` are not too close to agents waiting at the front of the queue.
+- If using a [`RigidWaypointQueue`](rigid-waypoint-queues.md), the `Queue Location` should be positioned at the back of the queue where agents would enter the queue.  This is required for Rigid Queues to work correctly.
 - If `Has Progression Path` is `true`, a [`ProgressionPath` component](progression-paths.md) must also be added to the same GameObject as the related `WaypointLocation`.  The [`ProgressionPath` component](progression-paths.md) also requires a [`LerpableLine` component](lerpable-lines.md) to work correctly.
