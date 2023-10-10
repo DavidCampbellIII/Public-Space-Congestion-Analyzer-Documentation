@@ -144,6 +144,8 @@
 <p>The <code>RigidWaypointQueue</code> component is located on the any GameObject with a name containing "RigidQueue".  They require <a href="../lerpable-lines/"><code>LerpableLine</code> components</a> to be on the same GameObject.</p>
 <h2 id="how-to-set-up">How to Set Up</h2>
 <p>To create a new <code>RigidWaypointQueue</code>, simply create a GameObject and add a <code>RigidWaypointQueue</code> component and <a href="../lerpable-lines/"><code>LerpableLine</code> component</a> to it.  Another option is duplicating an existing <code>RigidWaypointQueue</code>.</p>
+<p><img alt="Queue Start Location" src="../../../img/queueStartLocation.png" /></p>
+<p>Next, make sure the <code>RigidWaypointQueue</code> is assigned to the associated <a href="../waypoint-locations/"><code>WaypointLocation</code></a> that uses it.  The <code>Queue Start Location</code> of the <code>WaypointLocation</code> should be positioned at the back of the RigidQueue where agents would enter the queue.  To find the <code>Queue Start Location</code>, look for a child object of the <code>WaypointLocation</code> with the name "Queue Start Location", and move it to the entrance of the RigidQueue.  <strong>This is required for RigidQueues to work correctly.</strong></p>
 <p>No additional work is required to configure a <code>RigidWaypointQueue</code>.  Simply assign nodes as you would any other <a href="../lerpable-lines/"><code>LerpableLine</code>s</a>.</p>
               
             </div>

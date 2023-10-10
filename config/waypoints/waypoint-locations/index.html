@@ -244,6 +244,7 @@
 <h2 id="tips">Tips</h2>
 <ul>
 <li><code>Queue Location</code> should always be positioned a bit back from the <code>Location</code> of the <code>WaypointLocation</code>.  This is to ensure agents waiting at the <code>Location</code> are not too close to agents waiting at the front of the queue.</li>
+<li>If using a <a href="../rigid-waypoint-queues/"><code>RigidWaypointQueue</code></a>, the <code>Queue Location</code> should be positioned at the back of the queue where agents would enter the queue.  This is required for Rigid Queues to work correctly.</li>
 <li>If <code>Has Progression Path</code> is <code>true</code>, a <a href="../progression-paths/"><code>ProgressionPath</code> component</a> must also be added to the same GameObject as the related <code>WaypointLocation</code>.  The <a href="../progression-paths/"><code>ProgressionPath</code> component</a> also requires a <a href="../lerpable-lines/"><code>LerpableLine</code> component</a> to work correctly.</li>
 </ul>
               
